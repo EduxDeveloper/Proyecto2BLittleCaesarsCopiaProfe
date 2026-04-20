@@ -5,6 +5,8 @@ import employeesRoutes from "./src/routes/employees.js";
 import customerRoutes from "./src/routes/customer.js";
 import registerCustomerRoutes from "./src/routes/registerCustomer.js" 
 import cookieParser from "cookie-parser";
+import loginCustomers from "./src/routes/loginCustomer.js";
+import logoutController from "./src/controllers/logoutController.js"
 
 //Creo una constante que es igual a
 //la libreria Express
@@ -20,5 +22,7 @@ app.use("/api/branches", branchesRoutes);
 app.use("/api/employee", employeesRoutes);
 app.use("/api/customers", customerRoutes);
 app.use("/api/registerCustomer", registerCustomerRoutes)
+app.use("/api/loginCustomers", loginCustomers);
+app.use("/api/logOut", logoutController);
 
 export default app;
