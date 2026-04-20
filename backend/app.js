@@ -7,10 +7,16 @@ import registerCustomerRoutes from "./src/routes/registerCustomer.js"
 import cookieParser from "cookie-parser";
 import loginCustomers from "./src/routes/loginCustomer.js";
 import logoutroute from "./src/routes/logout.js"
+import cors from "cors";
 
 //Creo una constante que es igual a
 //la libreria Express
 const app = express();
+
+app.use(cors({
+    origin: ["http://localhost:5173" , "http://localhost:5174"],
+    credentials: true
+}))
 
 app.use(cookieParser())
 
